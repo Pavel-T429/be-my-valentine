@@ -1,0 +1,124 @@
+:root {
+    --bg-pink: #ffb6c1;
+    --card-white: #ffffff;
+    --btn-pink: #e91e63;
+    --btn-gray: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-pink);
+    font-family: 'Comic Sans MS', sans-serif; /* Или любой другой мягкий шрифт */
+}
+
+.back-arrow {
+	display: none; /* Принудительно скрываем */
+    position: fixed;     /* 1. Позиционирование: вырываем кнопку из общего потока */
+    top: 30px; 
+    left: 30px;
+    z-index: 9999; /* Чтобы кнопка была поверх всего */
+
+    /* 2. Форма и размер */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    
+    /* 3. Центрирование иконки внутри */
+    justify-content: center;
+    align-items: center;
+    
+    /* 4. Шрифт и символ */
+    font-family: Arial, sans-serif; /* Для идеальной симметрии */
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 0;
+    padding-right: 2px; /* Маленькая хитрость для визуального баланса знака < */
+
+    /* 5. Эффекты */
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+/* Эффект при наведении */
+.back-arrow:hover {
+    transform: scale(1.1);
+    background-color: #fcfcfc;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Эффект при нажатии */
+.back-arrow:active {
+    transform: scale(0.95);
+}
+
+.card {
+    background: var(--card-white);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.cat-img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Важно для перемещения кнопки */
+}
+
+button {
+    padding: 12px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#yesBtn {
+    background-color: var(--btn-pink);
+    color: white;
+	/* Добавляем плавность для всех изменений, включая scale */
+    transition: transform 0.3s ease, background-color 0.2s; 
+    z-index: 10; /* Чтобы кнопка перекрывала всё остальное, когда станет огромной */
+}
+
+#noBtn {
+    background-color: var(--btn-gray);
+    color: #333;
+    position: relative; /* Чтобы JS мог менять координаты */
+    transition: all 0.3s ease;
+}
+
+.hint {
+    margin-top: 20px;
+    font-size: 14px;
+	font-weight: bold;
+    color: #666;
+}
+#yesBtn:hover {
+    background-color: #d81b60; /* Чуть более темный/насыщенный розовый */
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4); /* Мягкое свечение */
+}
