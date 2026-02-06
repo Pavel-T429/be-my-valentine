@@ -52,8 +52,8 @@ yesBtn.addEventListener('click', () => {
     setTimeout(() => {
         document.querySelector('.card').innerHTML = `
             <img src="assets/celebrate.gif" class="cat-img">
-            <h1 style="font-family: 'Comic Sans MS', cursive;">Урааа!❤️</h1>
-            <p style="font-family: 'Comic Sans MS', cursive;">Я знал, что ты выберешь Да!</p>
+            <h1 style="font-family: 'Comic Sans MS';">Урааа!❤️</h1>
+            <p style="font-family: 'Comic Sans MS';">Я знал, что ты выберешь Да!</p>
         `;
     }, 200);
 });
@@ -63,4 +63,5 @@ if (backBtn) {
     backBtn.addEventListener('click', () => {
         window.location.reload(); 
     });
+
 }
